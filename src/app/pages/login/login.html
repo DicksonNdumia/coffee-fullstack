@@ -1,0 +1,90 @@
+@if (isLoginView) {
+  <form class="login-page">
+    <header class="login-header">
+      <h1>Welcome Back to Coffee Website</h1>
+    </header>
+
+    <div class="login-container">
+      <div class="input-group">
+        <label for="email-field" class="email-label">UserName</label>
+        <input
+          name="userName"
+          [(ngModel)]="userLogin.email"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your Email"
+          type="email"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password-field" class="password-label">Password</label>
+        <input
+          name="password"
+          [(ngModel)]="userLogin.password"
+          id="password-field"
+          class="password-input"
+          placeholder="••••••••"
+          type="password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn" (click)="onLogin()">Sign In</button>
+      <p>
+        Don't have an account<a class="link-info" (click)="isLoginView = false">Register Here</a>
+      </p>
+    </div>
+  </form>
+} @else {
+  <form class="login-page">
+    <header class="login-header">
+      <h1>New Here! Welcome to Coffee Website</h1>
+    </header>
+
+    <div class="login-container">
+      <div class="input-group">
+        <label for="email-field" class="email-label">userName</label>
+        <input
+          name="userName"
+          [(ngModel)]="userRegisterObj.userName"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your user name"
+          type="text"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <label for="email-field" class="email-label">Email</label>
+        <input
+          name="emailId"
+          [(ngModel)]="userRegisterObj.emailId"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your email"
+          type="email"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password-field" class="password-label">Password</label>
+        <input
+          name="password"
+          [(ngModel)]="userRegisterObj.password"
+          id="password-field"
+          class="password-input"
+          placeholder="••••••••"
+          type="password"
+          required
+        />
+      </div>
+
+      <!--      <button type="submit" class="btn">Sign In</button>-->
+      <button class="btn" (click)="onRegister()">Create Account</button>
+      <p>I have an account already<a class="link-info" (click)="isLoginView = true">Login</a></p>
+    </div>
+  </form>
+}

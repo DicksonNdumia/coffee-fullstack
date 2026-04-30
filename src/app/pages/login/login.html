@@ -45,10 +45,10 @@
 
     <div class="login-container">
       <div class="input-group">
-        <label for="email-field" class="email-label">userName</label>
+        <label for="email-field" class="email-label">name</label>
         <input
           name="userName"
-          [(ngModel)]="userRegisterObj.userName"
+          [(ngModel)]="userRegisterObj.name"
           id="email-field"
           class="email-input"
           placeholder="enter your user name"
@@ -56,30 +56,93 @@
           required
         />
       </div>
+
+      <div class="input-group">
+        <label for="email-field" class="email-label">Location</label>
+        <input
+          name="location"
+          [(ngModel)]="userRegisterObj.location"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your Location"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="email-field" class="email-label">County</label>
+        <input
+          name="county"
+          [(ngModel)]="userRegisterObj.county"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your Home County"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="email-field" class="email-label">Phone Number</label>
+        <input
+          name="phone_number"
+          [(ngModel)]="userRegisterObj.phone_number"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your Phone number"
+          type="tel"
+          required
+        />
+      </div>
+
       <div class="input-group">
         <label for="email-field" class="email-label">Email</label>
         <input
-          name="emailId"
-          [(ngModel)]="userRegisterObj.emailId"
+          name="email"
+          [(ngModel)]="userRegisterObj.email"
           id="email-field"
           class="email-input"
-          placeholder="enter your email"
+          placeholder="enter your user email"
           type="email"
           required
         />
       </div>
 
       <div class="input-group">
-        <label for="password-field" class="password-label">Password</label>
+        <label for="email-field" class="email-label">password</label>
         <input
           name="password"
           [(ngModel)]="userRegisterObj.password"
-          id="password-field"
-          class="password-input"
-          placeholder="••••••••"
+          id="email-field"
+          class="email-input"
+          placeholder="enter Your password"
           type="password"
           required
         />
+      </div>
+      <div class="input-group">
+        <label for="email-field" class="email-label">Date Of Birth</label>
+        <input
+          name="age"
+          [(ngModel)]="userRegisterObj.age"
+          id="email-field"
+          class="email-input"
+          placeholder="enter your Date of birt"
+          type="date"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="password-field" class="password-label">Select your Role</label>
+        <select name="role_id" [(ngModel)]="userRegisterObj.role_id">
+
+          <option>Select Role</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
       </div>
 
       <!--      <button type="submit" class="btn">Sign In</button>-->

@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
 export class Layout {
-
   logout() {
-    const isLocalData = localStorage.getItem('angular18local');
-   if (isLocalData) {
-     const users = JSON.parse(isLocalData);
-     const reset = localStorage.clear();
-   }
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
   }
 }

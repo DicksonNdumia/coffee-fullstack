@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule,FormsModule],
@@ -13,12 +14,14 @@ import { FormsModule } from '@angular/forms';
 export class Dashboard implements OnInit {
   meetingList: any[] = [];
   isLoading: boolean = true;
-  announcementList: any[] = [];
-  constructor(private announcementsService: AnnouncementsService) {}
+
+
+
+  constructor(private announcementsService: AnnouncementsService,) { }
 
   ngOnInit(): void {
    this.loadMeetings();
-   this.loadAnnouncements();
+
   }
 
   loadMeetings() {
@@ -35,17 +38,7 @@ export class Dashboard implements OnInit {
    }
   }
 
-  loadAnnouncements() {
-    try {
-      this.announcementsService.getAllAnnouncements().subscribe((res: any) => {
-        this.announcementList = res.data;
-        this.isLoading = false;
-        //console.log("Announcements loaded", res.data);
-      });
-    }
-    catch (e) {
-      console.error(e);
-      this.isLoading = false;
-    }
-  }
+
+
+
 }

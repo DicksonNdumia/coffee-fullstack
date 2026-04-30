@@ -1,0 +1,38 @@
+<div  class="meeting-container">
+  <header class="meeting-header">
+    <h1>Upcoming Meetings</h1>
+  </header>
+  @if (isLoading) {
+    <p>Loading</p>
+  }@else {
+
+    <section class="meeting-grid" >
+      @for (item of meetingList; track item.id || $index) {
+        <div class="meeting-card">
+          <div class="card-badge">#{{ $index + 1 }}</div>
+
+          <h2 class="meeting-title">{{ item.title }}</h2>
+
+          <p class="meeting-description">
+            <strong>Description:</strong> {{ item.description }}
+          </p>
+
+          <div class="meeting-attendance">
+            <strong>Attendees:</strong> {{ item.attendance }}
+          </div>
+        </div>
+      } @empty {
+        <p class="no-meetings">No upcoming meetings scheduled.</p>
+      }
+    </section>
+  }
+
+</div>
+
+
+
+
+
+
+
+

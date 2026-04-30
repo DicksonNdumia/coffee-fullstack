@@ -1,0 +1,40 @@
+<!--This is a sidebar navigation-->
+<section class="sidebar"  >
+
+  @if (userData) {
+    <div  class="navbar-header">
+      <header>
+
+        <h1>User Dashboard</h1>
+        <p>Hello:<strong>{{userData.name.toUpperCase()}}</strong></p>
+        <p>{{userData.email}}</p>
+      </header>
+    </div>
+  } @else {
+   <p>Hello User</p>
+  }
+
+
+
+
+  <div class="navigations-link">
+    <ul class="navigations-lists">
+
+      <li><a href="#">View Announcements</a></li>
+      <li><a href="#">Payout</a></li>
+      <li><a href="#">Analysis</a></li>
+      <li><a href="#">Delivery Sessions</a></li>
+      <li><a href="#">Meeting</a></li>
+      <li><a href="#">Minutes</a></li>
+      <li><a href="#">Seasons</a></li>
+    </ul>
+  </div>
+
+  <div class="btn">
+    <button  class="btn-logout">
+      Logout
+    </button>
+  </div>
+
+
+</section>

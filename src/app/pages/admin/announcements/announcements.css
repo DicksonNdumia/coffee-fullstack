@@ -1,0 +1,84 @@
+/* Container Spacing */
+.meeting-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.meeting-header h1 {
+  color: #4b2c20;
+  border-bottom: 3px solid #d2b48c;
+  display: inline-block;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* The Grid Layout */
+.meeting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Individual Meeting Card */
+.meeting-card {
+  background-color: #fff;
+  border-left: 5px solid #6f4e37; /* Coffee brown accent */
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.meeting-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Badge (#1, #2, etc) */
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: #f5f5dc;
+  color: #8b4513;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid #d2b48c;
+}
+
+/* Title & Content */
+.meeting-title {
+  color: #4b2c20;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  padding-right: 40px; /* Leave space for the badge */
+}
+
+.meeting-description,
+.meeting-attendance {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.meeting-description strong,
+.meeting-attendance strong {
+  color: #6f4e37;
+}
+
+/* Empty State Styling */
+.no-meetings {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px;
+  background-color: #ece0d1;
+  color: #4b2c20;
+  border-radius: 10px;
+  font-style: italic;
+}

@@ -1,55 +1,76 @@
-<!--This is a sidebar navigation-->
-<section class="sidebar"  >
-
-
+<section class="sidebar">
   @if (userData) {
-    <div  class="navbar-header">
+    <div class="navbar-header">
       <header>
-
         <h1>Admin Dashboard</h1>
-        <p>Hello:<strong>{{userData.name.toUpperCase()}}</strong></p>
-        <p>{{userData.email}}</p>
+        <p>Hello: <strong>{{userData.name.toUpperCase()}}</strong></p>
+        <p class="user-email">{{userData.email}}</p>
       </header>
     </div>
   } @else {
-    <p>Hello User</p>
+    <div class="navbar-header">
+      <p>Hello User</p>
+    </div>
   }
-
 
   <div class="navigations-link">
     <ul class="navigations-lists">
-
-      <li><a href="#">Create Announcements</a></li>
-      <li><a href="#">Add and View Users</a></li>
-      <li><a href="#">Payout</a></li>
-      <li><a href="#">Analysis</a></li>
-      <li><a href="#">Site Data</a></li>
-      <li><a href="#">Create Meeting</a></li>
-      <li><a href="#">Minutes</a></li>
-      <li><a href="#">Seasons</a></li>
+      <li>
+        <button (click)="changeTab('Announcements')" [class.active]="currentComponent === 'Announcements'">
+          Create Announcements
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Users')" [class.active]="currentComponent === 'Users'">
+          Add and View Users
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Payment')" [class.active]="currentComponent === 'Payment'">
+          Payout
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Analysis')" [class.active]="currentComponent === 'Analysis'">
+          Analysis
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Meeting')" [class.active]="currentComponent === 'Meeting'">
+          Create Meeting
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Minutes')" [class.active]="currentComponent === 'Minutes'">
+          Minutes
+        </button>
+      </li>
+      <li>
+        <button (click)="changeTab('Seasons')" [class.active]="currentComponent === 'Seasons'">
+          Seasons
+        </button>
+      </li>
     </ul>
   </div>
 
-  <div class="btn">
-    <button  class="btn-logout">
-      Logout
-    </button>
+  <div class="logout-wrapper">
+    <button class="btn-logout" (click)="logout()">Logout</button>
   </div>
-
-
 </section>
 
-<!--This is a Where the components will be displayed -->
-
-<app-announcements></app-announcements>
-<app-users></app-users>
-<app-analysis/>
-<app-meeting/>
-<app-minutes/>
-<app-seasons/>
-<app-payment/>
-
-
-
-
-
+<!-- Main Content Area -->
+<main class="content-area">
+  @defer {
+    @if (currentComponent == 'Announcements') { <app-announcements/> }
+    @else if(currentComponent == 'Users') { <app-users/> }
+    @else if (currentComponent == 'Analysis') { <app-analysis/> }
+    @else if (currentComponent == 'Meeting') { <app-meeting/> }
+    @else if (currentComponent == 'Seasons') { <app-seasons/> }
+    @else if (currentComponent == 'Minutes') { <app-minutes/> }
+    @else if (currentComponent == 'Payment') { <app-payment/> }
+  } @placeholder {
+    <div class="loader-container">
+      <p>Preparing your workspace...</p>
+    </div>
+  }
+</main>

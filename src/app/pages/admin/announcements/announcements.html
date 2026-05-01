@@ -1,32 +1,28 @@
+<app-spinner></app-spinner>
 <div class="meeting-container">
   <header class="meeting-header">
     <h1>Upcoming Announcements</h1>
   </header>
 
-  @if(isLoading) {
-    <p>Loading announcements ....</p>
-
-  } @else {
-    <section class="meeting-grid">
-      @for (item of announcementList; track item.id || $index) {
-        <div class="meeting-card">
-          <div class="card-badge">#{{ item.id }}</div>
-
-          <h2 class="meeting-title">{{ item.title }}</h2>
-
-          <p class="meeting-description">
-            <strong>Description:</strong> {{ item.description }}
-          </p>
 
 
-        </div>
-      } @empty {
-        <p class="no-meetings">No Announcements.</p>
-      }
-    </section>
+  <section class="meeting-grid">
 
-  }
+    @for (item of announcementList; track item.id || $index) {
+      <div class="meeting-card">
+        <div class="card-badge">#{{ item.id }}</div>
+
+        <h2 class="meeting-title">{{ item.title }}</h2>
+
+        <p class="meeting-description">
+          {{ item.description }}
+        </p>
 
 
-
+      </div>
+    }
+  </section>
 </div>
+
+
+

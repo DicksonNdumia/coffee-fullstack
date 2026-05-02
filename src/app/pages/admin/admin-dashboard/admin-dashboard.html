@@ -60,7 +60,7 @@
 
 <!-- Main Content Area -->
 <main class="content-area">
-  @defer {
+
     @if (currentComponent == 'Announcements') { <app-announcements/> }
     @else if(currentComponent == 'Users') { <app-users/> }
     @else if (currentComponent == 'Analysis') { <app-analysis/> }
@@ -68,9 +68,9 @@
     @else if (currentComponent == 'Seasons') { <app-seasons/> }
     @else if (currentComponent == 'Minutes') { <app-minutes/> }
     @else if (currentComponent == 'Payment') { <app-payment/> }
-  } @placeholder {
+
     <div class="loader-container">
       <p>Preparing your workspace...</p>
     </div>
-  }
+
 </main>

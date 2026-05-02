@@ -1,1 +1,53 @@
-<p>minutes works!</p>
+<app-spinner></app-spinner>
+<div class="minutes-page">
+  <app-spinner></app-spinner>
+
+  <header class="minutes-header">
+    <h1>Meeting Minutes</h1>
+  </header>
+
+  <section class="minutes-list">
+    @for (item of minutes; track item.id) {
+      <article class="minutes-card">
+        <div class="minutes-meta">
+          <span class="badge">ID: {{item.id}}</span>
+          <span class="presided">Presided by: <strong>{{item.presided_by}}</strong></span>
+        </div>
+
+        <h2 class="minutes-title">{{item.title}}</h2>
+
+        <div class="attendance-grid">
+          <div class="attendance-group">
+            <h3>Leaders</h3>
+            <p><span class="label">Present:</span> {{item.leader_present}}</p>
+            <p><span class="label text-red">Absent:</span> {{item.leader_absent}}</p>
+          </div>
+          <div class="attendance-group">
+            <h3>Members</h3>
+            <p><span class="label">Present:</span> {{item.members_present}}</p>
+            <p><span class="label text-red">Absent:</span> {{item.members_absent}}</p>
+          </div>
+        </div>
+
+        <div class="agenda-section">
+          <div class="agenda-item">
+            <h4>Agenda 01</h4>
+            <p>{{item.agenda_one}}</p>
+          </div>
+          <div class="agenda-item">
+            <h4>Agenda 02</h4>
+            <p>{{item.agenda_two}}</p>
+          </div>
+          <div class="agenda-item">
+            <h4>Agenda 03</h4>
+            <p>{{item.agenda_three}}</p>
+          </div>
+        </div>
+      </article>
+    } @empty {
+      <div class="empty-state">No minutes recorded yet.</div>
+    }
+  </section>
+</div>
+
+

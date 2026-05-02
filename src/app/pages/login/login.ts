@@ -44,22 +44,29 @@ export class Login {
   }
 
   onLogin() {
-    this.authService.onLogin(this.userLogin).subscribe((res: any) => {
-      //console.log('res', res);
-      localStorage.setItem('accessToken', res.accessToken);
-      //console.log(res.user);
-      localStorage.setItem('currentUser', JSON.stringify(res.user));
-      if(res.user.role_id === 1) {
-       this.router.navigateByUrl('/admin-dashboard')
-      }
-      else if (res.user.role_id === 2) {
+    try {
+      this.authService.onLogin(this.userLogin).subscribe((res: any) => {
+        //console.log('res', res);
+        localStorage.setItem('accessToken', res.accessToken);
+        //console.log(res.user);
+        localStorage.setItem('currentUser', JSON.stringify(res.user));
+        if(res.user.role_id === 1) {
+          this.router.navigateByUrl('/admin-dashboard')
+        }
+        else if (res.user.role_id === 2) {
 
-        this.router.navigateByUrl('/directors');
+          this.router.navigateByUrl('/directors');
+        }
+        else if(res.user.role_id === 3) {
+          this.router.navigateByUrl('/user');
+        }
+      });
+    } catch (error:any) {
+      if(error.status === 401) {
+        alert("Failed to login");
       }
-      else if(res.user.role_id === 3) {
-        this.router.navigateByUrl('/user');
-      }
-    });
+    }
   }
+
 }
 

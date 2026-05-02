@@ -1,0 +1,110 @@
+.seasons-container {
+  padding: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  color: #4b2c20;
+  margin: 0;
+}
+
+/* The Grid */
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Season Card */
+.season-card {
+  background: #fff;
+  border: 1px solid #d2b48c;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.season-id {
+  background: #f5f5dc;
+  color: #6f4e37;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Titles and Text */
+.season-name {
+  font-size: 1.5rem;
+  color: #4b2c20;
+  margin: 10px 0;
+}
+
+.season-details p {
+  margin: 5px 0;
+  color: #5d4037;
+  font-size: 0.9rem;
+}
+
+/* Button Styling */
+.btn-action {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #d2b48c;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-left: 5px;
+}
+
+.btn-action.add {
+  background-color: #fdf5e6;
+  color: #6f4e37;
+}
+
+.btn-action.close {
+  background-color: #6f4e37;
+  color: white;
+}
+
+.btn-delete-season {
+  width: 100%;
+  margin-top: 15px;
+  background: none;
+  border: 1px solid #a0522d;
+  color: #a0522d;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-delete-season:hover {
+  background-color: #a0522d;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #4b2c20;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}

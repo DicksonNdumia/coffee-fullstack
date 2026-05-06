@@ -1,1 +1,22 @@
-<p>analysis works!</p>
+<app-spinner></app-spinner>
+<div>
+  <header class="minutes-header">
+    <h1>Full Analysis</h1>
+  </header>
+
+  <section>
+    @if (analysis) {
+      <div>
+        {{analysis.id}}
+      </div>
+
+      <p>Total Users: {{analysis.total_users}}</p>
+      <p>Total Farmers: {{analysis.total_farmers}}</p>
+      <p>Open  Seasons: {{analysis.open_seasons}}</p>
+      <p>Total Deliveries: {{analysis.total_sessions}}</p>
+      <p>Total Coffee delivered to the station: {{analysis.total_coffee_kg}}</p>
+      <p>Total Payout: {{analysis.total_farmer_payout}} </p>
+    }
+  </section>
+
+</div>

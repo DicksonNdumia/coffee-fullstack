@@ -25,11 +25,11 @@
           Add and View Users
         </button>
       </li>
-      <li>
-        <button (click)="changeTab('Payment')" [class.active]="currentComponent === 'Payment'">
-          Payout
-        </button>
-      </li>
+<!--      <li>-->
+<!--        <button (click)="changeTab('Payment')" [class.active]="currentComponent === 'Payment'">-->
+<!--          Payout-->
+<!--        </button>-->
+<!--      </li>-->
       <li>
         <button (click)="changeTab('Analysis')" [class.active]="currentComponent === 'Analysis'">
           Analysis
@@ -69,8 +69,6 @@
     @else if (currentComponent == 'Minutes') { <app-minutes/> }
     @else if (currentComponent == 'Payment') { <app-payment/> }
 
-    <div class="loader-container">
-      <p>Preparing your workspace...</p>
-    </div>
+
 
 </main>

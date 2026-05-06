@@ -8,16 +8,14 @@ import { AuthService } from './auth-service';
 export class Loading {
   private requestCount = signal(0);
 
-  isLoading = computed(()=> this.requestCount()> 0);
+  isLoading = computed(() => this.requestCount() > 0);
 
   show() {
-    this.requestCount.update(count=> count + 1)
+    this.requestCount.update((count) => count + 1);
   }
 
   hide() {
-    setTimeout(()=> {
-
-    },3000)
-    this.requestCount.update(count => Math.max(0,count-1))
+    setTimeout(() => {}, 3000);
+    this.requestCount.update((count) => Math.max(0, count - 1));
   }
 }

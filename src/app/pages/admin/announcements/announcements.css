@@ -83,3 +83,33 @@
   font-style: italic;
 }
 
+.btn-add-meeting {
+  background-color: #4b2c20;
+  color: #f5f5dc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-update {
+  background-color: #d2b48c;
+  color: #4b2c20;
+}
+
+.btn-update:hover {
+  background-color: #c3a67d;
+}
+
+.btn-delete {
+  background-color: #fdf5e6;
+  color: #a0522d;
+  border: 1px solid #a0522d !important;
+}
+
+.btn-delete:hover {
+  background-color: #a0522d;
+  color: #fff;
+}
+

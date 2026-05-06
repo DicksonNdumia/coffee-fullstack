@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-dashboard.css',
 })
 export class AdminDashboard implements OnInit {
-  currentComponent: string = 'Announcements';
+  currentComponent: string = 'Analysis';
   constructor(private authService: AuthService) {}
   userData: any;
 

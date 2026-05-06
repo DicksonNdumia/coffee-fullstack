@@ -1,84 +1,126 @@
-/* Container Spacing */
+/* Container & Header */
 .meeting-container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+  padding: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #d2b48c;
+  padding-bottom: 15px;
 }
 
 .meeting-header h1 {
   color: #4b2c20;
-  border-bottom: 3px solid #d2b48c;
-  display: inline-block;
-  margin-bottom: 30px;
-  font-size: 2rem;
+  margin: 0;
 }
 
-/* The Grid Layout */
+/* Add Meeting Button */
+.btn-add-meeting {
+  background-color: #4b2c20;
+  color: #f5f5dc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-add-meeting:hover {
+  background-color: #6f4e37;
+}
+
+/* Meeting Grid */
 .meeting-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
 }
 
-/* Individual Meeting Card */
+/* Card Styling */
 .meeting-card {
   background-color: #fff;
-  border-left: 5px solid #6f4e37; /* Coffee brown accent */
-  border-radius: 8px;
-  padding: 20px;
+  border: 1px solid #ece0d1;
+  border-radius: 12px;
+  padding: 25px;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .meeting-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(75, 44, 32, 0.1);
 }
 
-/* Badge (#1, #2, etc) */
 .card-badge {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 15px;
-  background-color: #f5f5dc;
+  background: #fdf5e6;
   color: #8b4513;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
   font-weight: bold;
-  border: 1px solid #d2b48c;
 }
 
-/* Title & Content */
 .meeting-title {
   color: #4b2c20;
-  margin-top: 0;
-  margin-bottom: 15px;
   font-size: 1.4rem;
-  padding-right: 40px; /* Leave space for the badge */
+  margin: 0 0 15px 0;
+  padding-right: 40px;
 }
 
-.meeting-description,
-.meeting-attendance {
-  font-size: 0.95rem;
-  color: #555;
+.card-info {
+  flex-grow: 1; /* Pushes actions to the bottom */
+  margin-bottom: 20px;
+}
+
+.meeting-description, .meeting-attendance {
+  font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 10px;
+  color: #5d4037;
 }
 
-.meeting-description strong,
-.meeting-attendance strong {
-  color: #6f4e37;
+/* Action Buttons */
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  border-top: 1px solid #f5f5dc;
+  padding-top: 15px;
 }
 
-/* Empty State Styling */
-.no-meetings {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 50px;
-  background-color: #ece0d1;
+.card-actions button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-update {
+  background-color: #d2b48c;
   color: #4b2c20;
-  border-radius: 10px;
-  font-style: italic;
+}
+
+.btn-update:hover {
+  background-color: #c3a67d;
+}
+
+.btn-delete {
+  background-color: #fdf5e6;
+  color: #a0522d;
+  border: 1px solid #a0522d !important;
+}
+
+.btn-delete:hover {
+  background-color: #a0522d;
+  color: #fff;
 }

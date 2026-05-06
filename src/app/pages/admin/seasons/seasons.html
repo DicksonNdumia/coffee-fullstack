@@ -1,1 +1,63 @@
-<p>seasons works!</p>
+<app-spinner></app-spinner>
+
+<section class="seasons-container">
+  <header class="section-header">
+    <h2>Manage Coffee Seasons</h2>
+    <!-- Global Actions -->
+    <button class="btn-primary">Create New Season</button>
+  </header>
+
+  <div class="seasons-grid">
+    @for (item of seasons; track item.id) {
+      <div class="season-card">
+        <div class="card-top">
+          <span class="season-id">#{{item.id}}</span>
+          <div class="card-actions">
+            <button class="btn-action add">Add Event</button>
+            <button class="btn-action close">Close Season</button>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <h1 class="season-name">{{item.name}}</h1>
+          <div class="season-details">
+            <p><strong>Year:</strong> {{item.year}}</p>
+            <p><strong>Timeline:</strong> {{item.start_date}} — {{item.end_date}}</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button class="btn-delete-season">Delete Season</button>
+        </div>
+      </div>
+    } @empty {
+      <p class="no-data">No seasons have been created yet.</p>
+    }
+  </div>
+</section>
+
+
+<!--This should be a pop-up modal that should be triggered when add seasons is pressed--->
+
+<form>
+  <label>
+    Name
+    <input placeholder="Season Name"  required type="date"/>
+  </label>
+
+  <label>
+    Name
+    <input placeholder="Start Date" required type="date" />
+  </label>
+
+  <label>
+    Name
+    <input placeholder="End Date" required  type="date" />
+  </label>
+
+  <label>
+    Name
+    <input placeholder="Year of Picking"  required type="text"/>
+  </label>
+
+</form>

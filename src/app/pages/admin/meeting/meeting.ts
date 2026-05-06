@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AnnouncementsService } from '../../../Services/announcements-service';
+import { Spinner } from '../../spinner/spinner';
 
 @Component({
   selector: 'app-meeting',
-  imports: [],
+  imports: [Spinner],
   templateUrl: './meeting.html',
   styleUrl: './meeting.css',
 })
 export class Meeting implements OnInit {
   meetingList: any[] = [];
   isLoading: boolean = true;
-
 
   constructor(private announcementsService: AnnouncementsService) {}
   ngOnInit(): void {

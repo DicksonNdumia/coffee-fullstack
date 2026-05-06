@@ -5,8 +5,10 @@
   </header>
 
 
+  <button class="btn-add-meeting"> Add announcement</button>
 
   <section class="meeting-grid">
+
 
     @for (item of announcementList; track item.id || $index) {
       <div class="meeting-card">
@@ -18,6 +20,9 @@
           {{ item.description }}
         </p>
 
+
+        <button class="btn-update">Delete</button>
+        <button class="btn-update">Update</button>
 
       </div>
     }
